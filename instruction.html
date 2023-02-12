@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Unit 2.2 Instruction</title>
+        <link rel="stylesheet" href="media/css/styles.css">
+    </head>
+    <body>
+        <header><h1>Unit 2.2: Style Selectors</h1></header>
+        <nav>
+            <div>
+                <a href="index.html">Objective</a>
+                <a href="overview.html">Overview</a>
+                <a href="instruction.html">Instruction</a>
+                <a href="examples.html">Examples</a>
+                <a href="practice/practice_start.html">Practice</a>
+                <a href="test/test_start.html">Test</a>
+            </div>
+        </nav>
+        <main>
+            <h2>Instruction</h2>
+            <p>Selectors are used to in CSS to find the HTML elements you want to apply your styles to. They are “selecting”
+                the element you want and adds the styles to it.
+            </p>
+
+            <p>There are three types of selectors you will be using, <u>type selectors</u>, <u>class selectors</u>, and
+                <u>id selectors</u>.
+            </p>
+
+            <h3>Type Selectors</h3>
+            <p><i>Type selectors</i> are the most basic selector. They use the name of an HTML element tag and apply the style
+                to every element with that tag.
+            </p>
+            <p class="syn"><strong>Syntax:</strong> html_tag {style: value;}</p>
+
+            <h3>Class Selectors</h3>
+            <p><i>Classes</i> are attributes that can be added to any HTML element to categorize it. You can make the class
+                name whatever you want and you can have as many HTML elements with same class as you'd like. It is added by
+                adding the attribute to the element's tag like so:
+            </p>
+            <p>&lt; tag   class = 'class_name' &gt;</p>
+            <p>To target elements with these classes, you will use <i>class selectors</i>, selectors that target all elements
+                with the same class attribute and apply the style to those elements. The difference between the syntax of a
+                class selector and a type selector is that the <u>class name must be preceded by a period (.)</u>.
+            </p>
+            <p class="syn"><strong>Syntax:</strong> .class_name {style: value;}</p>
+
+            <h3>ID Selectors</h3>
+            <p><i>IDs</i> work similarly to classes, as they are attribute that can be added to HTML elements and the ID name
+                can be anything you want. Unlike classes, <u>unique IDs can only be applied to one element at a time</u>. They
+                should only be used for elements you plan to single out in your HTML. You can add the attribute to the
+                element's tag like so:
+            </p>
+            <p>&lt; tag   id = 'id_name' &gt;</p>
+            <p>To target an element with an ID, you will use <i>id selectors</i>, selectors that target the element with the
+                same ID attribute and apply the style to that element. The difference between the syntax of a id selector and
+                other selectors is that the <u>ID name must be preceded by a pound symbol (#)</u>.
+            </p>
+            <p class="syn"><strong>Syntax:</strong> .id_name {style: value;}</p>
+
+            <h3>Grouping Selectors</h3>
+            <p>One last thing to know about is <i>grouping selectors</i>. If you want multiple element types, classes, and/or
+                IDs to have the same styles, you can save time and space by applying the styles to a group of selectors.
+                Simply list out the selectors and divide them with commas, like so:
+            </p>
+            <p class="syn"><strong>Syntax:</strong> selector1, .selector2, #selector3 {style: value;}</p>
+        </main>
+    </body>
+</html>

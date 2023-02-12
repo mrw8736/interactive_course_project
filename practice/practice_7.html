@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Unit 2.2 Practice</title>
+        <link rel="stylesheet" href="../media/css/styles.css">
+        <script>
+            function formValidation() {
+                answr = document.getElementById('ans').value;
+                if(answr == ''){
+                    alert("Place your answer in the text box.");
+                    return false;
+                }
+                return true;
+            }
+
+            function checkAnswer() {
+                let valid = formValidation();
+                if(!valid){
+                    return valid;
+                }
+                answr = document.getElementById('ans').value.toUpperCase();
+                if(answr == "TYPE") {
+                    document.getElementById('cor').innerHTML = "Correct!";
+                    document.getElementById('cor').style.color = "green";
+                    document.getElementById('feed').innerHTML = "This is an ID selector. The selector '.small' is 'small' preceded by a pound symbol, making it an id selector. The element with the ID 'small' will be affected.";
+                }
+                else {
+                    document.getElementById('cor').innerHTML = "Incorrect!";
+                    document.getElementById('cor').style.color = "red";
+                    document.getElementById('feed').innerHTML = "Take another look at the start of the selector. What character does it start with? What does that control?";
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <header><h1>Unit 2.2: Style Selectors</h1></header>
+        <nav>
+            <div>
+                <a href="../index.html">Objective</a>
+                <a href="../overview.html">Overview</a>
+                <a href="../instruction.html">Instruction</a>
+                <a href="../examples.html">Examples</a>
+                <a href="practice_start.html">Practice</a>
+                <a href="../test/test_start.html">Test</a>
+            </div>
+        </nav>
+        <main>
+            <div id="pracNav">
+                <button class="last" onclick="location.href = 'practice_6.html'">Last</button>
+                <button class="next" onclick="location.href = 'practice_8.html'">Next</button>
+            </div>
+            <h2>Practice</h2>
+            <h3>Problem 7 of 8</h2>
+            <form id="practice">
+                <img src="../media/images/practice/practice 3.png" alt="">
+                <p><strong>What type of style selector is being used?</strong></p>
+                <input type="text" id="ans"> selector<br>
+                <input type="button" value="Submit" id="sub" onclick="checkAnswer()">
+            </form>
+            <h3 id="cor"></h3>
+            <p id="feed"></p>
+        </main>
+    </body>
+</html>

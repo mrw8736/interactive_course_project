@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Unit 2.2 Examples</title>
+        <link rel="stylesheet" href="media/css/styles.css">
+    </head>
+    <body>
+        <header><h1>Unit 2.2: Style Selectors</h1></header>
+        <nav>
+            <div>
+                <a href="index.html">Objective</a>
+                <a href="overview.html">Overview</a>
+                <a href="instruction.html">Instruction</a>
+                <a href="examples.html">Examples</a>
+                <a href="practice/practice_start.html">Practice</a>
+                <a href="test/test_start.html">Test</a>
+            </div>
+        </nav>
+        <main>
+            <h2>Examples</h2>
+            <p>Let's go through a few examples to see what each selector looks like and how they differ from one another.</p>
+            <table>
+                <tr><th>Example 1 - Type Selector</th></tr>
+                <tr><td><img src="media/images/examples/example_alt1.png" alt=""></td></tr>
+                <tr>
+                    <td>
+                        This one is a <i>type selector</i> because it <u>doesn't have a pound or period preceding its name</u>,
+                        and it contains the name 'div', meaning this will target every 'div' element and apply the color style
+                        of red to it.
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr><th>Example 2 - Class Selector</th></tr>
+                <tr><td><img src="media/images/examples/example_alt2.png" alt=""></td></tr>
+                <tr>
+                    <td>
+                        At first glance you may think this is the same as the last example, but don't let names fool you! Even
+                        though it's using the name of an HTML element, the selector is still a <i>class selector</i> because
+                        the <u>'div' is preceded by a period</u>. Therefore, it will target every element that has the class
+                        attribute of 'div' instead of all 'div' elements.
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr><th>Example 3 - ID Selector</th></tr>
+                <tr><td><img src="media/images/examples/example_alt3.png" alt=""></td></tr>
+                <tr>
+                    <td>
+                        This one is an <i>ID selector</i> because it has a pound symbol preceding its name, and it contains the name
+                        'bell'. Because we are dealing with IDs, this means this will only target the one element with the ID
+                        'bell'.
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr><th>Example 4 - Grouped Selector</th></tr>
+                <tr><td><img src="media/images/examples/example_alt4.png" alt=""></td></tr>
+                <tr>
+                    <td>
+                        This one has the <i>ID selector</i> for the 'bell' ID from the last example, alongside a <i>class selector</i>
+                        for the 'taco' class. Because they're separated by a comma and next to the same style, they are <i>grouped</i>,
+                        meaning the element with the 'bell' ID and all elements of the 'taco' class will get the color style of red.
+                    </td>
+                </tr>
+            </table>
+        </main>
+    </body>
+</html>

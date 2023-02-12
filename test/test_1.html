@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Unit 2.2 Test</title>
+        <link rel="stylesheet" href="../media/css/styles.css">
+        <script>
+            function formValidation() {
+                let alrt = '';
+                let qs = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8'];
+                for(i=0; i<8; i++){
+                    let x = document.getElementsByName(qs[i]);
+                    let answered = false;
+                    x.forEach(element => {
+                        if(element.checked) {
+                            answered = true;
+                        }
+                    });
+                    if(!answered) {
+                        alrt += "Question " + (i+1) + " ,";
+                    }
+                }
+                
+                if(alrt != '') {
+                    alrt = alrt.slice(0, -2);
+                    alert("The following questions need answers: " + alrt);
+                    return false;
+                }
+                return true;
+            }
+
+            function testResults() {
+                let valid = formValidation();
+                if(!valid){
+                    return valid;
+                }
+                let qs = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8'];
+                let correct = 0
+                for(i=0; i<8; i++) {
+                    let x = document.getElementsByName(qs[i]);
+                    x.forEach(element => {
+                        if(element.checked && element.value == "correct"){
+                            element.nextElementSibling.style.color = "green";
+                            correct++;
+                        }
+                        else if(element.checked){
+                            element.nextElementSibling.style.color = "red";
+                        }
+                        else {
+                            element.nextElementSibling.style.border = "";
+                        }
+                    });
+                }
+                correct = correct*12.5;
+                if(correct < 75){
+                    document.getElementById("score").style.color = "red";
+                }
+                else{
+                    document.getElementById("score").style.color = "green";
+                    document.getElementById("key").disabled = false;
+                }
+                let msg = "Final Score: " + correct + "%";
+                document.getElementById("score").innerHTML = msg;
+
+                return valid;
+            }
+
+            function answerKey() {
+                let right = ['q13', 'q23', 'q32', 'q41', 'q53', 'q63', 'q72', 'q84'];
+                right.forEach(element => {
+                    document.getElementById(element).nextElementSibling.style.border = "2px solid green";
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <header><h1>Unit 2.2: Style Selectors</h1></header>
+        <nav>
+            <div>
+                <a href="../index.html">Objective</a>
+                <a href="../overview.html">Overview</a>
+                <a href="../instruction.html">Instruction</a>
+                <a href="../examples.html">Examples</a>
+                <a href="../practice/practice_start.html">Practice</a>
+                <a href="test_start.html">Test</a>
+            </div>
+        </nav>
+        <main>
+            <h2>Unit 2.2 Test</h1>
+            <p>Each question has a screen capture of a CSS style. Choose the answer that best describes what elements will be affected.</p>
+
+            <form name="selfTest">
+                <div class="question">
+                    <h3>Question 1</h3>
+                    <img src="../media/images/test/test1.png" alt=".nav {height: 500px;}">
+                    <p><strong>What element(s) will be affected by the styles?</strong></p>
+
+                    <input type="radio" name="q1" id="q11" value="incorrect">
+                    <label for="q11">A. Elements with a 'nav' tag.</label><br>
+                    <input type="radio" name="q1" id="q12" value="incorrect">
+                    <label for="q12">B. Elements with the 'nav' ID.</label><br>
+                    <input type="radio" name="q1" id="q13" value="correct">
+                    <label for="q13">C. Elements part of the 'nav' class.</label><br>
+                    <input type="radio" name="q1" id="q14" value="incorrect">
+                    <label for="q14">D. None of the above.</label>
+                </div>
+                <div class="question">
+                    <h3>Question 2</h3>
+                    <img src="../media/images/test/test2.png" alt="ul, ol {height: 500px;}">
+                    <p><strong>What element(s) will be affected by the styles?</strong></p>
+
+                    <input type="radio" name="q2" id="q21" value="incorrect">
+                    <label for="q21">A. Elements with a 'ul' tag.</label><br>
+                    <input type="radio" name="q2" id="q22" value="incorrect">
+                    <label for="q22">B. Elements with a 'ol' tag.</label><br>
+                    <input type="radio" name="q2" id="q23" value="correct">
+                    <label for="q23">C. Both answers A and C.</label><br>
+                    <input type="radio" name="q2" id="q24" value="incorrect">
+                    <label for="q24">D. None of the above.</label>
+                </div>
+                <div class="question">
+                    <h3>Question 3</h3>
+                    <img src="../media/images/test/test3.png" alt="#can {height: 500px;}">
+                    <p><strong>What element(s) will be affected by the styles?</strong></p>
+
+                    <input type="radio" name="q3" id="q31" value="incorrect">
+                    <label for="q31">A. Elements with a 'can' tag.</label><br>
+                    <input type="radio" name="q3" id="q32" value="correct">
+                    <label for="q32">B. Elements with the 'can' ID.</label><br>
+                    <input type="radio" name="q3" id="q33" value="incorrect">
+                    <label for="q33">C. Elements part of the 'can' class.</label><br>
+                    <input type="radio" name="q3" id="q34" value="incorrect">
+                    <label for="q34">D. None of the above.</label>
+                </div>
+                <div class="question">
+                    <h3>Question 4</h3>
+                    <img src="../media/images/test/test4.png" alt="form {height: 500px;}">
+                    <p><strong>What element(s) will be affected by the styles?</strong></p>
+
+                    <input type="radio" name="q4" id="q41" value="correct">
+                    <label for="q42">A. Elements with a 'form' tag.</label><br>
+                    <input type="radio" name="q4" id="q42" value="incorrect">
+                    <label for="q42">B. Elements with the 'form' ID.</label><br>
+                    <input type="radio" name="q4" id="q43" value="incorrect">
+                    <label for="q43">C. Elements part of the 'form' class.</label><br>
+                    <input type="radio" name="q4" id="q44" value="incorrect">
+                    <label for="q44">D. None of the above.</label>
+                </div>
+                <div class="question">
+                    <h3>Question 5</h3>
+                    <img src="../media/images/test/test5.png" alt="nav, .p, .jim {height: 500px;}">
+                    <p><strong>What element(s) will <u>NOT</u> be affected by the grouped styles?</strong></p>
+
+                    <input type="radio" name="q5" id="q51" value="incorrect">
+                    <label for="q51">A. Elements part of the 'jim' class.</label><br>
+                    <input type="radio" name="q5" id="q52" value="incorrect">
+                    <label for="q52">B. Elements part of the 'p' class.</label><br>
+                    <input type="radio" name="q5" id="q53" value="correct">
+                    <label for="q53">C. Elements part of the 'nav' class.</label><br>
+                    <input type="radio" name="q5" id="q54" value="incorrect">
+                    <label for="q54">D. Elements with a 'nav' tag.</label>
+                </div>
+                <div class="question">
+                    <h3>Question 6</h3>
+                    <img src="../media/images/test/test6.png" alt=".ball {height: 500px;}">
+                    <p><strong>What element(s) will be affected by the styles?</strong></p>
+
+                    <input type="radio" name="q6" id="q61" value="incorrect">
+                    <label for="q61">A. Elements with a 'ball' tag.</label><br>
+                    <input type="radio" name="q6" id="q62" value="incorrect">
+                    <label for="q62">B. Elements with the 'ball' ID.</label><br>
+                    <input type="radio" name="q6" id="q63" value="correct">
+                    <label for="q63">C. Elements part of the 'ball' class.</label><br>
+                    <input type="radio" name="q6" id="q64" value="incorrect">
+                    <label for="q64">D. None of the above.</label>
+                </div>
+                <div class="question">
+                    <h3>Question 7</h3>
+                    <img src="../media/images/test/test7.png" alt="#a {height: 500px;}">
+                    <p><strong>What element(s) will be affected by the styles?</strong></p>
+
+                    <input type="radio" name="q7" id="q71" value="incorrect">
+                    <label for="q71">A. Elements with a 'a' tag.</label><br>
+                    <input type="radio" name="q7" id="q72" value="correct">
+                    <label for="q72">B. Elements with the 'a' ID.</label><br>
+                    <input type="radio" name="q7" id="q73" value="incorrect">
+                    <label for="q73">C. Elements part of the 'a' class.</label><br>
+                    <input type="radio" name="q7" id="q74" value="incorrect">
+                    <label for="q74">D. None of the above.</label>
+                </div>
+                <div class="question">
+                    <h3>Question 8</h3>
+                    <img src="../media/images/test/test8.png" alt="hr, p, #slim {height: 500px;}">
+                    <p><strong>What element(s) will be affected by the styles?</strong></p>
+
+                    <input type="radio" name="q8" id="q81" value="incorrect">
+                    <label for="q81">A. Elements with 'hr', 'p', and 'slim' tags.</label><br>
+                    <input type="radio" name="q8" id="q82" value="incorrect">
+                    <label for="q82">B. Elements with the 'hr', 'p', and 'slim' IDs.</label><br>
+                    <input type="radio" name="q8" id="q83" value="incorrect">
+                    <label for="q83">C. Elements part of the 'hr', 'p', and 'slim' classes.</label><br>
+                    <input type="radio" name="q8" id="q84" value="correct">
+                    <label for="q84">D. None of the above.</label>
+                </div>
+
+                <input type="button" value="Submit" id="sub" onclick="return testResults()">
+            </form>
+            <button onclick="answerKey()" id="key" disabled>Answers</button>
+            <h3 id="score"></h3>
+        </main>
+    </body>
+</html>

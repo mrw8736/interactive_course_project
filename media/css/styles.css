@@ -1,0 +1,111 @@
+*{font-family: Arial, Helvetica, sans-serif;}
+
+body {
+    background-color: antiquewhite;
+    margin: 0;
+}
+
+header {
+    background-color: lightcyan;
+    padding: 2em;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+nav {
+    background-color: darkblue;
+}
+
+nav div {
+    width: fit-content;
+    margin-left: auto ;
+    margin-right: auto ;
+    padding: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: azure;
+    padding: 28px;
+    font-size: 1.3rem;
+}
+
+nav a:hover {
+    background-color: azure;
+    color: darkblue;
+}
+
+main {margin: 2em 20%;}
+
+p {line-height: 1.5em;}
+
+h2 {
+    font-size: 2rem;
+    margin: 1em 0;
+}
+
+.syn {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 1em;
+}
+
+table, tr, th, td {
+    border: 1px solid;
+}
+
+table {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+td {padding: 1em 7em;}
+
+td img {
+    width: 60%;
+    margin-left: 20%;
+}
+
+/* #pracNav {
+
+} */
+
+.last, .next {
+    border-radius: 7px;
+    font-size: 2rem;
+    font-style: italic;
+    margin-top: initial;
+    margin-bottom: initial;
+    background-color: azure;
+}
+
+.last:hover, .next:hover {
+    background-color: goldenrod;
+    cursor: pointer;
+}
+
+.next {
+    float: right;
+}
+
+#practice * {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.question {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+#sub, #key, button {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    font-size: 1em;
+}

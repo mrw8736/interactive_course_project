@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Unit 2.2 Practice</title>
+        <link rel="stylesheet" href="../media/css/styles.css">
+        <script>
+            function formValidation() {
+                answr = document.getElementById('ans').value;
+                if(answr == ''){
+                    alert("Place your answer in the text box.");
+                    return false;
+                }
+                return true;
+            }
+
+            function checkAnswer() {
+                let valid = formValidation();
+                if(!valid){
+                    return valid;
+                }
+                answr = document.getElementById('ans').value.toUpperCase();
+                if(answr == "GROUPED") {
+                    document.getElementById('cor').innerHTML = "Correct!";
+                    document.getElementById('cor').style.color = "green";
+                    document.getElementById('feed').innerHTML = "This is a grouped selector. The first selector is a type selector because 'a' is by itself and the second selector is an ID selector because it has 'a' preceded by a pound symbol. Because they are listed next to the same styles separated by a comma, they are grouped and will both get the styles. All elements with the tag 'a' and the element with the ID 'a' will be affected.";
+                }
+                else if(answr == "TYPE") {
+                    document.getElementById('cor').innerHTML = "Almost!";
+                    document.getElementById('cor').style.color = "goldenrod";
+                    document.getElementById('feed').innerHTML = "There is a type selector, since it does not have any special characters preceding it, but there is a better answer. There's more than one selector, so what does that mean?";
+                }
+                else if(answr == "ID") {
+                    document.getElementById('cor').innerHTML = "Almost!";
+                    document.getElementById('cor').style.color = "goldenrod";
+                    document.getElementById('feed').innerHTML = "There is an ID selector, since it has a pound symbol preceding it, but there is a better answer. There's more than one selector, so what does that mean?";
+                }
+                else {
+                    document.getElementById('cor').innerHTML = "Incorrect!";
+                    document.getElementById('cor').style.color = "red";
+                    document.getElementById('feed').innerHTML = "Take another look at the selector. There are two selectors separated by a comma. What does that mean?";
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <header><h1>Unit 2.2: Style Selectors</h1></header>
+        <nav>
+            <div>
+                <a href="../index.html">Objective</a>
+                <a href="../overview.html">Overview</a>
+                <a href="../instruction.html">Instruction</a>
+                <a href="../examples.html">Examples</a>
+                <a href="practice_start.html">Practice</a>
+                <a href="../test/test_start.html">Test</a>
+            </div>
+        </nav>
+        <main>
+            <div id="pracNav">
+                <button class="last" onclick="location.href = 'practice_7.html'">Last</button>
+                <button class="next" disabled>Next</button>
+            </div>
+            <h2>Practice</h2>
+            <h3>Problem 8 of 8</h2>
+            <form id="practice">
+                <img src="../media/images/practice/practice 8.png" alt="">
+                <p><strong>What type of style selector is being used?</strong></p>
+                <input type="text" id="ans"> selector<br>
+                <input type="button" value="Submit" id="sub" onclick="checkAnswer()">
+            </form>
+            <h3 id="cor"></h3>
+            <p id="feed"></p>
+        </main>
+    </body>
+</html>
